@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cachecleanerjeet/og.git"
+    "url": "git+https://github.com/cachecleanerjeet/dynamic-image.git"
   },
   "keywords": [
     "opengraph",
@@ -22,9 +22,9 @@
   "author": "Tuhin Kanti Pal <me@thetuhin.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cachecleanerjeet/og/issues"
+    "url": "https://github.com/cachecleanerjeet/dynamic-image/issues"
   },
-  "homepage": "https://github.com/cachecleanerjeet/og#readme",
+  "homepage": "https://github.com/cachecleanerjeet/dynamic-image#readme",
   "dependencies": {
     "chrome-aws-lambda": "^10.1.0",
     "puppeteer-core": "^10.4.0"
