@@ -6,7 +6,6 @@
     "lib": "lib"
   },
   "scripts": {
-    "dev": "vercel dev",
     "deploy": "vercel --prod"
   },
   "repository": {

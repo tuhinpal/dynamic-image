@@ -17,8 +17,8 @@ module.exports = async function (req, res) {
 
     template = templateEngine(template, {
       icon: icon || `${base}/icon/think.svg`,
-      title: title || "Company Inc.",
-      content: content || "Open graph heading",
+      title: title || "Dynamic Image.",
+      content: content || "Dynamically generate images",
       base,
     });
     res.setHeader(
