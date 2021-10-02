@@ -1,12 +1,13 @@
 {
-  "name": "og",
+  "name": "dynamic-image",
   "version": "1.0.0",
-  "description": "Dynamically generate open graph images",
+  "description": "Dynamically generate images for open-graph or website",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "vercel dev"
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/cachecleanerjeet/og/issues"
   },
-  "homepage": "https://github.com/cachecleanerjeet/og#readme"
+  "homepage": "https://github.com/cachecleanerjeet/og#readme",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^10.4.0"
+  }
 }

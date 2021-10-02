@@ -1,7 +1,14 @@
 {
   "functions": {
-    "api/template/[name].js": {
-      "includeFiles": "template/files/**"
+    "api/[type]/[name].js": {
+      "includeFiles": "template/**"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/public/(.*)",
+      "headers": { "cache-control": "s-maxage=86400" },
+      "dest": "/public/$1"
+    }
+  ]
 }
