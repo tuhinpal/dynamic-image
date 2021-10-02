@@ -23,7 +23,7 @@ module.exports = async function (req, res) {
     });
     res.setHeader(
       "cache-control",
-      "public, immutable, no-transform, max-age=86400"
+      "public, immutable, no-transform, max-age=2592000"
     );
     if (type === "html") {
       // Requested html
@@ -37,10 +37,6 @@ module.exports = async function (req, res) {
         // listen to console logs
         if (msg.text().includes("<svg")) {
           res.setHeader("Content-Type", "image/svg+xml");
-          res.setHeader(
-            "cache-control",
-            "public, immutable, no-transform, max-age=86400"
-          );
           res.status(200).end(msg.text());
         }
       });

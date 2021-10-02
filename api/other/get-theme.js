@@ -17,5 +17,10 @@ module.exports = function (req, res) {
     };
   });
 
+  res.setHeader(
+    "cache-control",
+    "public, immutable, no-transform, max-age=86400"
+  );
+
   res.status(200).json(themes);
 };
