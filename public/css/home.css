@@ -1,0 +1,180 @@
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+}
+
+header {
+  height: 55px;
+  background: white;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 22px;
+}
+
+header a {
+  margin-top: 5px;
+}
+
+header h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+header h1 img {
+  margin-right: 7px;
+}
+
+main {
+  padding: 10px 10%;
+}
+
+main .create {
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 45px;
+}
+
+main .create .generate,
+main .create .generated {
+  width: 48%;
+}
+
+main .create .generate h2 {
+  margin-bottom: 10px;
+}
+
+main .create .generate .form {
+  margin-top: 25px;
+}
+
+main .create .generate .form .group {
+  margin-top: 10px;
+}
+
+main .create .generate .form .group label {
+  display: inline-block;
+  width: 75px;
+}
+
+main .create .generate .form .group input,
+main .create .generate .form .group select {
+  padding: 5px;
+  width: 260px;
+}
+
+main .create .generate .form .group input:focus,
+main .create .generate .form .group select:focus {
+  outline: none;
+}
+
+main .create .generate .form .group select {
+  width: 275px;
+}
+
+main .create .generate .form button {
+  cursor: pointer;
+  margin-top: 30px;
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 2px solid #000;
+  font-size: 16px;
+}
+
+main .create .generated .frame {
+  width: 548px;
+  height: 308px;
+  overflow: hidden;
+  padding: 0;
+  margin-top: auto;
+  border-radius: 10px;
+}
+
+main .create .generated .frame iframe {
+  width: 1920px;
+  height: 1080px;
+  -webkit-transform: scale(0.3);
+  -webkit-transform-origin: 0 0;
+}
+
+main .create .generated .assets {
+  margin-top: 15px;
+}
+
+main .create .generated .assets a {
+  color: #000;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 10px 8%;
+  }
+  main .create {
+    margin-top: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .create .generate,
+  main .create .generated {
+    width: 100%;
+  }
+  main .create .generate h2,
+  main .create .generate p {
+    text-align: center;
+  }
+  main .create .generate .form button {
+    width: 105%;
+  }
+  main .create .generate .form .group input {
+    width: 100%;
+  }
+  main .create .generate .form .group select {
+    width: 105%;
+  }
+  main .create .generated {
+    margin-top: 25px;
+  }
+  main .create .generated .frame {
+    margin-left: auto;
+    margin-right: auto;
+    width: 274px;
+    height: 154px;
+  }
+  main .create .generated .frame iframe {
+    -webkit-transform: scale(0.15);
+  }
+  header .hideit {
+    display: none;
+  }
+}
+/*# sourceMappingURL=home.css.map */

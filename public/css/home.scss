@@ -1,0 +1,154 @@
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: black;
+}
+
+header {
+  height: 55px;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 22px;
+  a {
+    margin-top: 5px;
+  }
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 22px;
+    img {
+      margin-right: 7px;
+    }
+  }
+}
+
+main {
+  padding: 10px 10%;
+  .create {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+    .generate,
+    .generated {
+      width: 48%;
+    }
+    .generate {
+      h2 {
+        margin-bottom: 10px;
+      }
+      .form {
+        margin-top: 25px;
+        .group {
+          margin-top: 10px;
+          label {
+            display: inline-block;
+            width: 75px;
+          }
+          input,
+          select {
+            padding: 5px;
+            width: 260px;
+            &:focus {
+              outline: none;
+            }
+          }
+          select {
+            width: 275px;
+          }
+        }
+        button {
+          cursor: pointer;
+          margin-top: 30px;
+          padding: 6px 20px;
+          border-radius: 8px;
+          font-weight: 700;
+          border: 2px solid #000;
+          font-size: 16px;
+        }
+      }
+    }
+    .generated {
+      .frame {
+        width: 548px;
+        height: 308px;
+        overflow: hidden;
+        padding: 0;
+        margin-top: auto;
+        border-radius: 10px;
+
+        iframe {
+          width: 1920px;
+          height: 1080px;
+          -webkit-transform: scale(0.3);
+          -webkit-transform-origin: 0 0;
+        }
+      }
+      .assets {
+        margin-top: 15px;
+        a {
+          color: #000;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 10px 8%;
+    .create {
+      margin-top: 30px;
+
+      flex-direction: column;
+      .generate,
+      .generated {
+        width: 100%;
+      }
+      .generate {
+        h2,
+        p {
+          text-align: center;
+        }
+        .form {
+          button {
+            width: 105%;
+          }
+          .group {
+            input {
+              width: 100%;
+            }
+            select {
+              width: 105%;
+            }
+          }
+        }
+      }
+      .generated {
+        margin-top: 25px;
+        .frame {
+          margin-left: auto;
+          margin-right: auto;
+          width: 274px;
+          height: 154px;
+          iframe {
+            -webkit-transform: scale(0.15);
+          }
+        }
+      }
+    }
+  }
+  header {
+    .hideit {
+      display: none;
+    }
+  }
+}

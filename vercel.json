@@ -1,6 +1,9 @@
 {
   "functions": {
-    "api/[type]/[name].js": {
+    "api/generate/[type]/[name].js": {
+      "includeFiles": "template/**"
+    },
+    "api/other/get-theme.js": {
       "includeFiles": "template/**"
     }
   },

@@ -1,17 +1,17 @@
 const { readFileSync } = require("fs");
 const { join } = require("path");
-const templateEngine = require("../../lib/template-engine");
-const pngScreenshot = require("../../lib/png-screenshot");
-const getRootPath = require("../../helpers/get-root-path");
-const puppPage = require("../../lib/pupp-page");
-const addSvgScript = require("../../helpers/add-svg-script");
+const templateEngine = require("../../../lib/template-engine");
+const pngScreenshot = require("../../../lib/png-screenshot");
+const getRootPath = require("../../../helpers/get-root-path");
+const puppPage = require("../../../lib/pupp-page");
+const addSvgScript = require("../../../helpers/add-svg-script");
 
 module.exports = async function (req, res) {
   const { type, name, icon, title, content } = req.query;
   const base = getRootPath();
   try {
     var template = readFileSync(
-      join(__dirname, "..", "..", "template", `${name}.html`),
+      join(__dirname, "..", "..", "..", "template", `${name}.html`),
       "utf-8"
     );
 
