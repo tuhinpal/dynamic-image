@@ -1,0 +1,27 @@
+{
+  "name": "og",
+  "version": "1.0.0",
+  "description": "Dynamically generate open graph images",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "vercel dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cachecleanerjeet/og.git"
+  },
+  "keywords": [
+    "opengraph",
+    "og",
+    "vercel",
+    "dynamic"
+  ],
+  "author": "Tuhin Kanti Pal <me@thetuhin.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cachecleanerjeet/og/issues"
+  },
+  "homepage": "https://github.com/cachecleanerjeet/og#readme"
+}

@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/template/[name].js": {
+      "includeFiles": "template/files/**"
+    }
+  }
+}
