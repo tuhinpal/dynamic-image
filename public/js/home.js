@@ -49,13 +49,7 @@ document.getElementById("generate").addEventListener("click", function (e) {
     e.target.innerText = "Generate";
   }, 700);
 
-  var urls = generate();
-
-  document.getElementById("html").href = urls.html;
-  document.getElementById("svg").href = urls.svg;
-  document.getElementById("png").href = urls.png;
-
-  document.getElementById("iframe").src = urls.html;
+  generate();
 });
 
 function generate() {
@@ -80,9 +74,15 @@ function generate() {
     console.log(hasherr);
   }
 
-  return {
+  var urls = {
     html: `${base}api/generate/html/${theme}?${options}`,
     svg: `${base}api/generate/svg/${theme}?${options}`,
     png: `${base}api/generate/png/${theme}?${options}`,
   };
+
+  document.getElementById("html").href = urls.html;
+  document.getElementById("svg").href = urls.svg;
+  document.getElementById("png").href = urls.png;
+  document.getElementById("iframe").src = urls.html;
+  return urls;
 }
