@@ -5,6 +5,7 @@ const pngScreenshot = require("../../../lib/png-screenshot");
 const getRootPath = require("../../../helpers/get-root-path");
 const puppPage = require("../../../lib/pupp-page");
 const addSvgScript = require("../../../helpers/add-svg-script");
+const { setHeader, headers } = require("../../../helpers/set-header");
 
 module.exports = async function (req, res) {
   const { type, name, icon, title, content } = req.query;
@@ -21,13 +22,11 @@ module.exports = async function (req, res) {
       content: content || "Dynamically generate images",
       base,
     });
-    res.setHeader(
-      "cache-control",
-      "public, immutable, no-transform, max-age=2592000"
-    );
+
     if (type === "html") {
       // Requested html
-      res.status(200).send(template);
+      setHeader(res, headers);
+      res.status(200).end(template);
     } else if (type === "svg") {
       // Requested SVG
       template = addSvgScript(template);
@@ -36,7 +35,11 @@ module.exports = async function (req, res) {
       page.on("console", (msg) => {
         // listen to console logs
         if (msg.text().includes("<svg")) {
-          res.setHeader("Content-Type", "image/svg+xml");
+          setHeader(res, {
+            // set headers if successfully get the svg
+            ...headers,
+            "Content-Type": "image/svg+xml",
+          });
           res.status(200).end(msg.text());
         }
       });
@@ -45,14 +48,25 @@ module.exports = async function (req, res) {
     } else if (type === "png") {
       // Requested PNG
       const file = await pngScreenshot(template);
-      res.setHeader("Content-Type", "image/png");
-      res.status(200).send(file);
+      setHeader(res, {
+        // set headers if successfully get the png
+        ...headers,
+        "Content-Type": "image/png",
+      });
+      res.status(200).end(file);
     } else {
+      setHeader(res, headers);
       res
         .status(404)
         .json({ message: "Type not found, Only supports png, svg, html" });
     }
   } catch (e) {
+    if (!e.toString().includes("ENOENT")) {
+      delete headers["Cache-Control"];
+    }
+
+    setHeader(res, headers);
+
     res.status(404).json({
       message: e.toString().includes("ENOENT")
         ? "Template not found"
