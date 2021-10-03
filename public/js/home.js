@@ -75,9 +75,9 @@ function generate() {
   }
 
   var urls = {
-    html: `${base}api/generate/html/${theme}?${options}`,
-    svg: `${base}api/generate/svg/${theme}?${options}`,
-    png: `${base}api/generate/png/${theme}?${options}`,
+    html: `${base}api/generate/html/${theme}.html?${options}`,
+    svg: `${base}api/generate/svg/${theme}.svg?${options}`,
+    png: `${base}api/generate/png/${theme}.png?${options}`,
   };
 
   document.getElementById("html").href = urls.html;

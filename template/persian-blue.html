@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{base}}/css/base.css" />
+    <title>Persian Blue</title>
+    <style>
+        body {
+            background-color: #1c39bb;
+            color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 98vh;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+        main {
+            position: fixed;
+            z-index: 100;
+            margin-top: -3rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+            overflow: hidden;
+        }
+
+        p {
+            text-align: center;
+            margin: 0;
+        }
+
+        .title {
+            font-size: 145px;
+            max-width: 90%;
+            letter-spacing: 1.8px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .content {
+            font-weight: 300;
+            font-size: 24px;
+            max-width: 85%;
+            display: -webkit-box;
+            margin: 0 auto;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .yellow {
+            color: #ffed75;
+        }
+    </style>
+</head>
+
+<body
+    onload="var word = '{{title}}'.split(' '); document.getElementById('title').innerHTML = `<span class='yellow'>${word.shift()}</span> ${word.join(' ')}`">
+    <main>
+        <p id="title" class="title"></p>
+        <p class="content">{{content}}</p>
+    </main>
+</body>
+
+</html>

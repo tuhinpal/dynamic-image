@@ -87,7 +87,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="'{{icon}}' === '' && document.getElementById('icon').remove()">
     <div class="background">
       <svg
         class="one"
@@ -207,7 +207,7 @@
       </svg>
     </div>
     <main>
-      <img src="{{icon}}" alt="Icon" />
+      <img id="icon" src="{{icon}}" alt="Icon" />
       <p class="title">{{title}}</p>
       <p class="content">{{content}}</p>
     </main>

@@ -64,10 +64,10 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="'{{icon}}' === '' && document.getElementById('icon').remove()">
     <main>
       <div class="logoside">
-        <img src="{{icon}}" alt="Icon" />
+        <img id="icon" src="{{icon}}" alt="Icon" />
       </div>
       <div class="contentside">
         <p class="title">{{title}}</p>

@@ -12,12 +12,19 @@ module.exports = async function (req, res) {
   const base = getRootPath();
   try {
     var template = readFileSync(
-      join(__dirname, "..", "..", "..", "template", `${name}.html`),
+      join(
+        __dirname,
+        "..",
+        "..",
+        "..",
+        "template",
+        `${name.replace(`.${type}`, "")}.html` // remove .png/svg/html
+      ),
       "utf-8"
     );
 
     template = templateEngine(template, {
-      icon: icon || `${base}/icon/think.svg`,
+      icon: icon || "",
       title: title || "Dynamic Image.",
       content: content || "Dynamically generate images",
       base,
