@@ -43,11 +43,11 @@ header h1 img {
   margin-right: 7px;
 }
 
-main {
+.create_di {
   padding: 10px 10%;
 }
 
-main .create {
+.create_di .create {
   min-height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,44 +61,44 @@ main .create {
   margin-bottom: 45px;
 }
 
-main .create .generate,
-main .create .generated {
+.create_di .create .generate,
+.create_di .create .generated {
   width: 48%;
 }
 
-main .create .generate h2 {
+.create_di .create .generate h2 {
   margin-bottom: 10px;
 }
 
-main .create .generate .form {
+.create_di .create .generate .form {
   margin-top: 25px;
 }
 
-main .create .generate .form .group {
+.create_di .create .generate .form .group {
   margin-top: 10px;
 }
 
-main .create .generate .form .group label {
+.create_di .create .generate .form .group label {
   display: inline-block;
   width: 75px;
 }
 
-main .create .generate .form .group input,
-main .create .generate .form .group select {
+.create_di .create .generate .form .group input,
+.create_di .create .generate .form .group select {
   padding: 5px;
   width: 260px;
 }
 
-main .create .generate .form .group input:focus,
-main .create .generate .form .group select:focus {
+.create_di .create .generate .form .group input:focus,
+.create_di .create .generate .form .group select:focus {
   outline: none;
 }
 
-main .create .generate .form .group select {
+.create_di .create .generate .form .group select {
   width: 275px;
 }
 
-main .create .generate .form button {
+.create_di .create .generate .form button {
   cursor: pointer;
   margin-top: 30px;
   padding: 6px 20px;
@@ -108,7 +108,7 @@ main .create .generate .form button {
   font-size: 16px;
 }
 
-main .create .generated .frame {
+.create_di .create .generated .frame {
   width: 548px;
   height: 308px;
   overflow: hidden;
@@ -117,60 +117,99 @@ main .create .generated .frame {
   border-radius: 10px;
 }
 
-main .create .generated .frame iframe {
+.create_di .create .generated .frame iframe {
   width: 1920px;
   height: 1080px;
   -webkit-transform: scale(0.3);
   -webkit-transform-origin: 0 0;
 }
 
-main .create .generated .assets {
+.create_di .create .generated .assets {
   margin-top: 15px;
 }
 
-main .create .generated .assets a {
+.create_di .create .generated .assets a {
   color: #000;
   margin-right: 10px;
 }
 
+.contribute {
+  margin-bottom: 35px;
+  min-height: 45vh;
+  padding: 0 15px;
+}
+
+.contribute h2,
+.contribute p {
+  min-width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.contribute h2 {
+  margin-bottom: 15px;
+}
+
+.contribute .image {
+  margin-top: 25px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer {
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+footer h4 {
+  min-width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
-  main {
+  .create_di {
     padding: 10px 8%;
   }
-  main .create {
+  .create_di .create {
     margin-top: 30px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  main .create .generate,
-  main .create .generated {
+  .create_di .create .generate,
+  .create_di .create .generated {
     width: 100%;
   }
-  main .create .generate h2,
-  main .create .generate p {
+  .create_di .create .generate h2,
+  .create_di .create .generate p {
     text-align: center;
   }
-  main .create .generate .form button {
-    width: 105%;
-  }
-  main .create .generate .form .group input {
+  .create_di .create .generate .form button {
     width: 100%;
   }
-  main .create .generate .form .group select {
-    width: 105%;
+  .create_di .create .generate .form .group input {
+    width: 95%;
   }
-  main .create .generated {
+  .create_di .create .generate .form .group select {
+    width: 99%;
+  }
+  .create_di .create .generated {
     margin-top: 25px;
   }
-  main .create .generated .frame {
+  .create_di .create .generated .frame {
     margin-left: auto;
     margin-right: auto;
     width: 274px;
     height: 154px;
   }
-  main .create .generated .frame iframe {
+  .create_di .create .generated .frame iframe {
     -webkit-transform: scale(0.15);
   }
   header .hideit {
