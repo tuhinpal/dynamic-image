@@ -1,0 +1,32 @@
+<!-- 
+        Create a normal HTML
+        Use these variables to set the content of the page
+            - {{title}}: the title of content
+            - {{content}}: description of content
+            - {{icon}}: logo of content
+            - {{base}}: base url (use it if you are requesting assets from the same server) i.e. use {{base}}/css/base.css insted of /css/base.css
+        Before body part end, please paste this line (See line no 30)
+        If you are using the {{icon}}, please use this onload function; this will hide the image if an image is empty (See lines no 25 & 26)
+        Don't use any javascript because SVG is not picking the changes from the DOM
+        
+        See template-engine for more context. Don't forget to add this to template directory with a cool name (Name: Lowercase, no spaces, no special characters use '-' for spaces)
+
+        Thanks for your contribution! 💗
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example.</title>
+  </head>
+  <body onload="'{{icon}}' === '' && document.getElementById('icon').remove()">
+    <img src="{{icon}}" id="icon" alt="Icon" />
+    <h1>{{title}}</h1>
+    <p>{{content}}</p>
+  </body>
+    <!-- SVG -->
+  </body>
+</html>

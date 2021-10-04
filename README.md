@@ -31,6 +31,6 @@ If you have a big website dependent on this repository for open-graph images, th
 
 ## Contribution
 
-Contributions for a theme is welcome. Please see this [example.html](/dynamic-image/blob/master/examples/index.html) for more detail. It is instructed to create an issue before committing some function changes.
+Contributions for a theme is welcome. Please see this [example.html](https://github.com/cachecleanerjeet/dynamic-image/blob/master/examples/index.html) for more detail. It is instructed to create an issue before committing some function changes.
 
 <br><a href="https://www.buymeacoffee.com/tuhinkpal"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=tuhinkpal&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"></a>
