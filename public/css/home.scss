@@ -93,9 +93,14 @@ header {
       }
       .assets {
         margin-top: 15px;
-        a {
+        a,
+        span {
           color: #000;
           margin-right: 10px;
+        }
+        .underline {
+          text-decoration: underline;
+          cursor: pointer;
         }
       }
     }

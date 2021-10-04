@@ -128,9 +128,15 @@ header h1 img {
   margin-top: 15px;
 }
 
-.create_di .create .generated .assets a {
+.create_di .create .generated .assets a,
+.create_di .create .generated .assets span {
   color: #000;
   margin-right: 10px;
+}
+
+.create_di .create .generated .assets .underline {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .contribute {
