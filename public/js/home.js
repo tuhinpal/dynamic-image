@@ -4,7 +4,7 @@ const base = "/"; // for development with live-server use https://dynamic-image.
 
 document.addEventListener("DOMContentLoaded", async function () {
   // render themes
-  var allThemeOptions = ``;
+  var allThemeOptions = `<option value="random">Random</option>`;
   try {
     var getThemesFromServer = await (
       await fetch(`${base}api/other/get-theme`)
@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   // get the hased data and render it
-  let selectedTheme = getThemesFromServer[0].value;
+  let selectedTheme = "random";
+  let options = "";
   try {
     var hash = window.location.hash.replace("#", "");
     var prev_data = JSON.parse(atob(hash));
@@ -32,15 +33,18 @@ document.addEventListener("DOMContentLoaded", async function () {
       document.getElementById("theme").value = prev_data.theme;
       selectedTheme = prev_data.theme;
     }
+    options = qs.stringify({ ...prev_data });
   } catch (hasherr) {
     console.log(`Failed to parse the hash`);
   }
 
   generate();
 
-  document.getElementById(
-    "iframe"
-  ).src = `${base}api/generate/html/${selectedTheme}`;
+  // Initilize the iframe src
+  document.getElementById("iframe").src =
+    selectedTheme === "random"
+      ? `${base}api/random/html?${options}`
+      : `${base}api/generate/html/${selectedTheme}?${options}`;
 });
 
 document.getElementById("generate").addEventListener("click", function (e) {
@@ -74,11 +78,17 @@ function generate() {
     console.log(hasherr);
   }
 
-  var urls = {
-    html: `${base}api/generate/html/${theme}.html?${options}`,
-    svg: `${base}api/generate/svg/${theme}.svg?${options}`,
-    png: `${base}api/generate/png/${theme}.png?${options}`,
-  };
+  var urls = {};
+
+  if (theme === "random") {
+    urls.html = `${base}api/random/html?${options}`;
+    urls.svg = `${base}api/random/svg?${options}`;
+    urls.png = `${base}api/random/png?${options}`;
+  } else {
+    urls.html = `${base}api/generate/html/${theme}.html?${options}`;
+    urls.svg = `${base}api/generate/svg/${theme}.svg?${options}`;
+    urls.png = `${base}api/generate/png/${theme}.png?${options}`;
+  }
 
   document.getElementById("html").href = urls.html;
   document.getElementById("svg").href = urls.svg;

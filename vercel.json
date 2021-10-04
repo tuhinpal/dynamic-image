@@ -5,6 +5,9 @@
     },
     "api/other/get-theme.js": {
       "includeFiles": "template/**"
+    },
+    "api/random/[type].js": {
+      "includeFiles": "template/**"
     }
   }
 }
