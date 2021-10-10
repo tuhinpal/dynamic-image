@@ -6,7 +6,7 @@ module.exports = async function (req) {
     if (supportedTypes.includes(req.query.type)) {
       var database;
       try {
-        database = await MongoClient.connect(process.env.MONGO_URL, {
+        database = await MongoClient.connect(process.env.MONGODB_URL, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
         });
