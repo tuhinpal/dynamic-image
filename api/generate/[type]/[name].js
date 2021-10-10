@@ -6,9 +6,12 @@ const getRootPath = require("../../../helpers/get-root-path");
 const puppPage = require("../../../lib/pupp-page");
 const addSvgScript = require("../../../helpers/add-svg-script");
 const { setHeader, headers } = require("../../../helpers/set-header");
+const logger = require("../../../logger");
 
 module.exports = async function (req, res) {
   const { type, name, icon, title, content } = req.query;
+  logger(req);
+
   const base = getRootPath();
   try {
     var template = readFileSync(

@@ -20,7 +20,7 @@
 Before deploy let's clear one thing, Should you need to deploy?
 If you have a big website dependent on this repository for open-graph images, then yes, go for it. Else you can use the URL which is given with this repository. This host directly builds the app whenever some changes appear in the repository, so you will get the latest features.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcachecleanerjeet%2Fdynamic-image)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcachecleanerjeet%2Fdynamic-image&env=MONGODB_URL)
 
 ## Thanks to
 

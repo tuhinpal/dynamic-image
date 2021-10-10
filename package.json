@@ -26,6 +26,7 @@
   "homepage": "https://github.com/cachecleanerjeet/dynamic-image#readme",
   "dependencies": {
     "chrome-aws-lambda": "^10.1.0",
+    "mongodb": "^4.1.3",
     "puppeteer-core": "^10.4.0",
     "qs": "^6.10.1"
   }
