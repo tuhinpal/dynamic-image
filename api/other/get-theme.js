@@ -3,7 +3,9 @@ const { join } = require("path");
 
 module.exports = function (req, res) {
   var getDir = readdirSync(join(__dirname, "..", "..", "template"));
-  var templates = getDir.filter((fileName) => fileName.endsWith(".html"));
+  var templates = getDir.filter(
+    (fileName) => fileName.endsWith(".html") && !fileName.includes("visadb-")
+  );
 
   var themes = templates.map((fileName) => {
     let value = fileName.replace(".html", "");

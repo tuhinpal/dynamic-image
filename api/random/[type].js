@@ -11,7 +11,9 @@ module.exports = function (req, res) {
   var options = qs.stringify(query);
 
   var getDir = readdirSync(join(__dirname, "..", "..", "template"));
-  var templates = getDir.filter((fileName) => fileName.endsWith(".html"));
+  var templates = getDir.filter(
+    (fileName) => fileName.endsWith(".html") && !fileName.includes("visadb-")
+  );
 
   var themes = templates.map((fileName) => {
     return fileName.replace(".html", "");
@@ -27,10 +29,8 @@ module.exports = function (req, res) {
       307
     );
   } else {
-    res
-      .status(404)
-      .json({
-        message: `Type not found, Only supports ${supportedTypes.join(", ")}`,
-      });
+    res.status(404).json({
+      message: `Type not found, Only supports ${supportedTypes.join(", ")}`,
+    });
   }
 };
