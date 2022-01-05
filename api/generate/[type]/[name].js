@@ -9,7 +9,7 @@ const { setHeader, headers } = require("../../../helpers/set-header");
 const logger = require("../../../logger");
 
 module.exports = async function (req, res) {
-  const { type, name, icon, title, content } = req.query;
+  const { type, name, icon, title, content, buffer } = req.query;
   logger(req);
 
   const base = getRootPath();
@@ -26,12 +26,19 @@ module.exports = async function (req, res) {
       "utf-8"
     );
 
-    template = templateEngine(template, {
+    var options = {
       icon: icon || "",
       title: title || "Dynamic Image.",
       content: content || "Dynamically generate images",
-      base,
-    });
+      base: base,
+    };
+
+    if (buffer) {
+      options = JSON.parse(Buffer.from(buffer, "base64").toString());
+      options.base = base;
+    }
+
+    template = templateEngine(template, options);
 
     if (type === "html") {
       // Requested html
