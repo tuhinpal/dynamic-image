@@ -59,6 +59,7 @@ module.exports = async function (req, res) {
           });
 
           await logger({
+            options,
             req,
             duration_ms: Date.now() - start_time,
             res_size_bytes: Buffer.byteLength(msg.text()),
@@ -72,6 +73,7 @@ module.exports = async function (req, res) {
       // Requested PNG
       const file = await pngScreenshot(template);
       await logger({
+        options,
         req,
         duration_ms: Date.now() - start_time,
         res_size_bytes: Buffer.byteLength(file),

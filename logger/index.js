@@ -1,12 +1,17 @@
 const axios = require("axios");
 
-module.exports = async function ({ req, duration_ms, res_size_bytes }) {
+module.exports = async function ({
+  options,
+  req,
+  duration_ms,
+  res_size_bytes,
+}) {
   if (process.env.AXIOM_KEY) {
     try {
       let injected_data = {};
 
-      Object.keys(req.query).forEach((key) => {
-        if (["title", "content", "ref", "icon"].includes(key)) {
+      Object.keys(options).forEach((key) => {
+        if (["title", "content", "icon"].includes(key)) {
           injected_data[`data_${key}`] = req.query[key];
         }
       });
