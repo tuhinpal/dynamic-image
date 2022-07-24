@@ -20,7 +20,7 @@
 Before deploy let's clear one thing, Should you need to deploy?
 If you have a big website dependent on this repository for open-graph images, then yes, go for it. Else you can use the URL which is given with this repository. This host directly builds the app whenever some changes appear in the repository, so you will get the latest features.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcachecleanerjeet%2Fdynamic-image&env=MONGODB_URL)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ftuhinpal%2Fdynamic-image&env=AXIOM_KEY)
 
 ## Thanks to
 
@@ -31,6 +31,6 @@ If you have a big website dependent on this repository for open-graph images, th
 
 ## Contribution
 
-Contributions for a theme is welcome. Please see this [example.html](https://github.com/cachecleanerjeet/dynamic-image/blob/master/examples/index.html) for more detail. It is instructed to create an issue before committing some function changes.
+Contributions for a theme is welcome. Please see this [example.html](https://github.com/tuhinpal/dynamic-image/blob/master/examples/index.html) for more detail. It is instructed to create an issue before committing some function changes.
 
 <br><a href="https://www.buymeacoffee.com/tuhinkpal"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=tuhinkpal&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"></a>

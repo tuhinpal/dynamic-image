@@ -10,7 +10,7 @@ const logger = require("../../../logger");
 
 module.exports = async function (req, res) {
   const { type, name, icon, title, content, buffer } = req.query;
-  logger(req);
+  let start_time = Date.now();
 
   const base = getRootPath();
   try {
@@ -49,13 +49,19 @@ module.exports = async function (req, res) {
       template = addSvgScript(template);
 
       const page = await puppPage();
-      page.on("console", (msg) => {
+      page.on("console", async (msg) => {
         // listen to console logs
         if (msg.text().includes("<svg")) {
           setHeader(res, {
             // set headers if successfully get the svg
             ...headers,
             "Content-Type": "image/svg+xml",
+          });
+
+          await logger({
+            req,
+            duration_ms: Date.now() - start_time,
+            res_size_bytes: Buffer.byteLength(msg.text()),
           });
           res.status(200).end(msg.text());
         }
@@ -65,6 +71,12 @@ module.exports = async function (req, res) {
     } else if (type === "png") {
       // Requested PNG
       const file = await pngScreenshot(template);
+      await logger({
+        req,
+        duration_ms: Date.now() - start_time,
+        res_size_bytes: Buffer.byteLength(file),
+      });
+
       setHeader(res, {
         // set headers if successfully get the png
         ...headers,
