@@ -8,14 +8,6 @@ module.exports = async function ({
 }) {
   if (process.env.AXIOM_KEY) {
     try {
-      let injected_data = {};
-
-      Object.keys(options).forEach((key) => {
-        if (["title", "content", "icon"].includes(key)) {
-          injected_data[`data_${key}`] = req.query[key];
-        }
-      });
-
       if (!req.query.name || !req.query.type)
         throw new Error("Missing name or type");
 
@@ -31,12 +23,11 @@ module.exports = async function ({
           method: "GET",
           duration_ms: duration_ms || 0,
           res_size_bytes: res_size_bytes || 0,
-          data_query: {
-            ...req.query,
-          },
           data_template_name: req.query.name.replace(`.${req.query.type}`, ""),
           data_template_type: req.query.type,
-          ...injected_data,
+          data: {
+            ...options,
+          },
         }),
       });
     } catch (error) {
